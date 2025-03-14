@@ -13,7 +13,6 @@ import static com.shop.discount.currencyexchange.constants.DiscountConstants.*;
 public class DiscountService {
 
     public double calculateDiscount(BillRequest request) {
-        double totalAmount = request.getItems().stream().mapToDouble(Item::getPrice).sum();
         double nonGroceryAmount = request.getItems().stream()
                 .filter(item -> !GROCERIES.equals(item.getCategory()))
                 .mapToDouble(Item::getPrice)
