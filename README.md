@@ -1,4 +1,4 @@
-# Currency Exchange Application
+# Discount with Currency Exchange Application
 
 This is a Spring Boot application that integrates with a third-party currency exchange API to calculate the total payable amount for a bill after applying discounts.
 
