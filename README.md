@@ -19,5 +19,5 @@ This is a Spring Boot application that integrates with a third-party currency ex
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/ambikadasc/discount-currency-exchange.git]
+   git clone https://github.com/ambikadasc/discount-currency-exchange.git
    cd discount-currency-exchange
