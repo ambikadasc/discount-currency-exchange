@@ -1,0 +1,41 @@
+@startuml
+class BillRequest {
+    - List<Item> items
+    - String userType
+    - int customerTenure
+    - String originalCurrency
+    - String targetCurrency
+}
+
+class Item {
+    - String name
+    - double price
+    - String category
+}
+
+class BillResponse {
+    - double totalAmount
+    - double payableAmount
+}
+
+class ExchangeRateResponse {
+    - Map<String, Double> rates
+}
+
+class CurrencyService {
+    + double getExchangeRate(String baseCurrency, String targetCurrency)
+}
+
+class DiscountService {
+    + double calculateDiscount(BillRequest request)
+}
+
+class BillController {
+    + ResponseEntity<BillResponse> calculateBill(BillRequest request)
+}
+
+BillRequest "1" *-- "many" Item
+BillController --> DiscountService
+BillController --> CurrencyService
+CurrencyService --> ExchangeRateResponse
+@enduml
